@@ -27,7 +27,8 @@ const AddButton = () => {
                 >
 
                     <View style={styles.addButtonInner}>
-                        <Pressable onPress={() => navigation.navigate('AddButton')}
+                        <Pressable 
+                        onPress={() => navigation.navigate('AddButton')}
                         >
                             <Image
                                 style={styles.addButtonIcon}

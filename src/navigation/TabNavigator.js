@@ -19,10 +19,12 @@ import PaymentSuccessfully from '../screens/paymentSuccessfully/PaymentSuccessfu
 
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import AddExpense from '../screens/addExpense/AddExpense';
+import { useFocusEffect } from '@react-navigation/native';
 
 
 
 const Tab = createBottomTabNavigator();
+// Multiple Page Routing
 const Stack = createNativeStackNavigator();
 
 
@@ -34,7 +36,7 @@ const getIconColor = focused => ({
 
 function WalletStack() {
     return (
-        <Stack.Navigator screenOptions={{headerShown:false}}>
+        <Stack.Navigator screenOptions={{ headerShown: false }}>
             <Stack.Screen name="Wallet" component={Wallet} />
             <Stack.Screen name="UpcomingBills" component={UpcomingBills} />
             <Stack.Screen name="ConnectWallet" component={ConnectWallet} />
@@ -51,6 +53,8 @@ function WalletStack() {
 
 
 const TabNavigator = () => {
+
+
     return (
         <Tab.Navigator
             screenOptions={{

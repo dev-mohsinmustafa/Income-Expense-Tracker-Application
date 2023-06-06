@@ -65,7 +65,7 @@ const Statistic = ({ navigation, props }) => {
             resizeMode: 'contain',
             alignItems: 'flex-start'
           }}
-          source={require("../../assets/images/graph.png")}
+          source={require("../../assets/images/grapp.png")}
         />
 
 
@@ -127,7 +127,7 @@ const Statistic = ({ navigation, props }) => {
           </View>
 
           <View style={{ backgroundColor: "#FBFBFB", borderRadius: 12, marginHorizontal: widthPixel(20), marginTop: heightPixel(15), }}>
-            <Card title1="Paypal" title2="Jan 16, 2022" title3="- $ 11.99" color="#F95B51" color1="#000000" color2="#666666" image={require("../../assets/images/paypal.png")}
+            <Card title1="Paypal" title2="Jan 16, 2022" title3="- $ 85.99" color="#F95B51" color1="#000000" color2="#666666" image={require("../../assets/images/paypal.png")}
               width={35} height={35}
             />
 
@@ -154,7 +154,7 @@ const styles = StyleSheet.create({
 
   },
   container1: {
-    flex: 1,
+    flex: 1.5,
     // backgroundColor: "yellow",
     flexDirection: 'row',
     justifyContent: 'space-between',

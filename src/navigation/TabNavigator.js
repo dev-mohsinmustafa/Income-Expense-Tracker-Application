@@ -1,5 +1,5 @@
-import React from 'react'
-import { View, Text, StyleSheet, Image } from 'react-native'
+import React, { useState } from 'react'
+import { View, Text, StyleSheet, Image, Alert } from 'react-native'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import HomePage from '../screens/homepage/HomePage';
 import Statistic from '../screens/statistic/Statistic';
@@ -19,12 +19,15 @@ import PaymentSuccessfully from '../screens/paymentSuccessfully/PaymentSuccessfu
 
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import AddExpense from '../screens/addExpense/AddExpense';
-import { useFocusEffect } from '@react-navigation/native';
+import { useFocusEffect, useIsFocused } from '@react-navigation/native';
+import { useRoute } from '@react-navigation/native';
 
 
 
 const Tab = createBottomTabNavigator();
 // Multiple Page Routing
+// Very Important Point for multiple screens navigation
+
 const Stack = createNativeStackNavigator();
 
 
@@ -33,6 +36,7 @@ const getIconColor = focused => ({
 });
 
 
+// Very Important Point for multiple screens navigation
 
 function WalletStack() {
     return (
@@ -53,6 +57,10 @@ function WalletStack() {
 
 
 const TabNavigator = () => {
+    const [showAddButton, setShowAddButton] = useState(true);
+
+
+
 
 
     return (
@@ -80,6 +88,12 @@ const TabNavigator = () => {
                     )
                 }}
 
+                listeners={({ navigation }) => ({
+                    tabPress: (e) => {
+                        setShowAddButton(true);
+                        navigation.navigate('HomePage');
+                    },
+                })}
             />
             <Tab.Screen name='Statistic' component={Statistic}
                 options={{
@@ -97,19 +111,28 @@ const TabNavigator = () => {
                     )
                 }}
 
-            />
-            <Tab.Screen name='AddButton' component={AddExpense}
-                options={{
-                    tabBarIconStyle: {
-                        height: 0
+                listeners={({ navigation }) => ({
+                    tabPress: (e) => {
+                        setShowAddButton(false);
+                        navigation.navigate('Statistic');
                     },
-                    tabBarButton: () => (
-                        <AddButton />
-                    ),
-
-                }}
-
+                })}
             />
+            {showAddButton && (
+                <Tab.Screen name='AddButton' component={AddExpense}
+                    options={{
+                        tabBarIconStyle: {
+                            height: 0
+                        },
+                        tabBarButton: () => (
+                            <AddButton />
+                        ),
+
+                    }}
+
+                />
+            )}
+            {/* Very Important Point for multiple screens navigation */}
 
             <Tab.Screen name='WalletStack' component={WalletStack}
 
@@ -127,6 +150,12 @@ const TabNavigator = () => {
                         </View>
                     )
                 }}
+                listeners={({ navigation }) => ({
+                    tabPress: (e) => {
+                        setShowAddButton(false);
+                        navigation.navigate('WalletStack');
+                    },
+                })}
             />
             <Tab.Screen name='Profile' component={Profile}
 
@@ -144,6 +173,12 @@ const TabNavigator = () => {
                         </View>
                     )
                 }}
+                listeners={({ navigation }) => ({
+                    tabPress: (e) => {
+                        setShowAddButton(false);
+                        navigation.navigate('Profile');
+                    },
+                })}
             />
 
 

@@ -72,7 +72,7 @@ const Onboarding = ({ navigation }) => {
 
             <LinearGradient colors={["#69AEA9", "#3F8782",]} style={styles.linearGradient}>
 
-                <TouchableOpacity 
+                <TouchableOpacity
                     onPress={() => {
                         navigation.navigate("Home")
                     }}
@@ -174,7 +174,7 @@ const styles = StyleSheet.create({
 
 
     },
-   
+
 
 
     linearGradient: {

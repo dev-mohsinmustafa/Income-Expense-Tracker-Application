@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import {
     TouchableWithoutFeedback,
@@ -17,25 +17,35 @@ const AddButton = () => {
 
     const navigation = useNavigation()
 
+    // If we hide button this code is used
+    // const [showAddButton, setShowAddButton] = useState(true);
+
+    // const handlePress = () => {
+    //     setShowAddButton(false);
+    //     navigation.navigate('AddButton');
+    // };
+
+    // if (!showAddButton) {
+    //     return null;
+    // }
+
+
     return (
         <View style={styles.container}>
             <View style={styles.box}>
                 <TouchableWithoutFeedback
-                    onPress={() => console.log("click")}
-
-                    style={styles.addButton}
-                >
-
+                    style={styles.addButton}>
                     <View style={styles.addButtonInner}>
-                        <Pressable 
-                        onPress={() => navigation.navigate('AddButton')}
+                        <Pressable
+                            // If we hide button this code is used
+                            // onPress={handlePress}
+                            onPress={() => navigation.navigate('AddButton')}
                         >
                             <Image
                                 style={styles.addButtonIcon}
                                 resizeMode="contain"
                                 source={require("../../assets/images/Add.png")
                                 }
-
                             />
                         </Pressable>
                     </View>

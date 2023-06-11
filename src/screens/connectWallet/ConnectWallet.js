@@ -55,7 +55,7 @@ const ConnectWallet = () => {
 
           <Image
             resizeMode='contain'
-            style={{width:widthPixel(324), height:heightPixel(211)}}
+            style={{ width: widthPixel(324), height: heightPixel(211) }}
             source={require("../../assets/images/card.png")}
           />
         </View>
@@ -68,8 +68,8 @@ const ConnectWallet = () => {
           <Text style={styles.para}>This card must be connected to a bank account under your name</Text>
         </View>
 
-
-        <View style={styles.container6}>
+        <View style={styles.fieldSet}>
+          <Text style={styles.legend}>NAME ON CARD</Text>
           <TextInput
             style={styles.inputField}
             placeholder="IRVAN MOSES"
@@ -77,6 +77,14 @@ const ConnectWallet = () => {
             keyboardType="numeric"
           />
         </View>
+        {/* <View style={styles.container6}>
+          <TextInput
+            style={styles.inputField}
+            placeholder="IRVAN MOSES"
+            placeholderTextColor="#438883"
+            keyboardType="numeric"
+          />
+        </View> */}
 
         <View style={styles.container7}>
           <View style={{ width: widthPixel(220) }}>
@@ -201,8 +209,8 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     marginTop: heightPixel(25),
-    flex:0.9
-    
+    flex: 0.9
+
   },
   container5: {
     // backgroundColor: "yellow",
@@ -221,16 +229,42 @@ const styles = StyleSheet.create({
     fontSize: fontPixel(13),
     maxWidth: widthPixel(290)
   },
+
+
+
+  fieldSet: {
+    // margin: 10,
+    paddingHorizontal: 10,
+    // paddingBottom: 10,
+    marginTop: heightPixel(20),
+    borderRadius: 8,
+    borderWidth: 1.4,
+    alignItems: 'center',
+    borderColor: "#438883",
+    marginHorizontal: widthPixel(25),
+
+  },
+  legend: {
+    position: 'absolute',
+    top: -8,
+    left: 10,
+    backgroundColor: '#FFFFFF',
+    color:"#666666",
+    fontFamily: "Inter-Regular",
+    fontSize: fontPixel(12),
+  },
+
   container6: {
     // backgroundColor: "red",
     marginTop: heightPixel(20),
     marginHorizontal: widthPixel(25)
   },
   inputField: {
-    borderRadius: 8,
-    borderWidth: 1,
-    borderColor: "#438883",
-    paddingLeft: widthPixel(20)
+    // borderRadius: 8,
+    // borderWidth: 1,
+    // borderColor: "#438883",
+    // paddingLeft: widthPixel(20),
+    width:"100%"
   },
   container7: {
     flexDirection: 'row',

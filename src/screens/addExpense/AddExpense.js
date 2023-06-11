@@ -13,6 +13,9 @@ let {
 } = ratios;
 
 const AddExpense = ({ navigation, props }) => {
+
+
+  
   return (
     <View style={styles.container}>
       <ImageBackground

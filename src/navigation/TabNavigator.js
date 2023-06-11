@@ -129,6 +129,12 @@ const TabNavigator = () => {
                         ),
 
                     }}
+                    listeners={({ navigation }) => ({
+                        tabPress: (e) => {
+                            setShowAddButton(false);
+                            navigation.navigate('AddExpense');
+                        },
+                    })}
 
                 />
             )}

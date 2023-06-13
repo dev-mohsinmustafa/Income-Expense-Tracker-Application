@@ -26,63 +26,66 @@ const HomePage = () => {
           width: widthPixel(414), height: widthPixel(357), resizeMode: 'cover'
         }}
         source={require("../../assets/images/home.png")}>
-        <View style={{ flex: 2 }}>
-          <View style={styles.topContainer}>
+        <View style={styles.topContainer}>
+          <View style={{ flexDirection: 'column', }}>
             <Text style={styles.text1}>Good afternoon,</Text>
-            <Image
-              style={styles.alarmImage}
-              source={require("../../assets/images/alarm.png")}
-            />
-          </View>
-
-          <View style={styles.alarmImageContainer}>
             <Text style={styles.text2}>Enjelin Morgeana</Text>
-          </View>
 
-          <View style={[styles.cardContainer,]}>
-            <View style={{ flexDirection: "row" }}>
-              <Text style={styles.balanceText}>Total Balance</Text>
-              <Image
-                style={{
-                  alignSelf: 'center',
-                  marginLeft: 8
-                }}
-                source={require("../../assets/images/total.png")}
-              />
-            </View>
+          </View>
+          <Image
+            style={styles.alarmImage}
+            source={require("../../assets/images/alarm.png")}
+          />
+        </View>
+
+        {/* <View style={styles.alarmImageContainer}> */}
+        {/* </View> */}
+        <View style={{ marginTop:58 }}>
+
+        <View style={[styles.cardContainer,]}>
+          <View style={{ flexDirection: "row" }}>
+            <Text style={styles.balanceText}>Total Balance</Text>
             <Image
-              style={{}}
-              source={require("../../assets/images/dot.png")}
+              style={{
+                alignSelf: 'center',
+                marginLeft: 8
+              }}
+              source={require("../../assets/images/total.png")}
             />
           </View>
-
-          <View style={{ flex: 0.5, }}>
-            <Text style={styles.cardText1}>$ 2,548.00</Text>
-          </View>
-
-          <View style={[styles.cardContainer2,]}>
-            <Text style={styles.cardText2}>Income</Text>
-            <Text style={styles.cardText3}>Expenses</Text>
-          </View>
           <Image
-            style={{
-              width: widthPixel(24), height: widthPixel(24),
-              marginTop: widthPixel(-22), marginLeft: widthPixel(38)
-            }}
-            source={require("../../assets/images/frame1.png")}
+            style={{}}
+            source={require("../../assets/images/dot.png")}
           />
-          <Image
-            style={{
-              width: widthPixel(24), height: widthPixel(24),
-              marginTop: widthPixel(-25), marginRight: widthPixel(125), alignSelf: 'flex-end',
-            }}
-            source={require("../../assets/images/frame2.png")}
-          />
+        </View>
 
-          <View style={[styles.cardContainer4,]}>
-            <Text style={styles.cardText4}>$ 1,840.00</Text>
-            <Text style={styles.cardText5}>$ 284.00</Text>
-          </View>
+        <View style={{  }}>
+          <Text style={styles.cardText1}>$ 2,548.00</Text>
+        </View>
+
+        <View style={[styles.cardContainer2,]}>
+          <Text style={styles.cardText2}>Income</Text>
+          <Text style={styles.cardText3}>Expenses</Text>
+        </View>
+        <Image
+          style={{
+            width: widthPixel(24), height: widthPixel(24),
+            marginTop: widthPixel(-22), marginLeft: widthPixel(38)
+          }}
+          source={require("../../assets/images/frame1.png")}
+        />
+        <Image
+          style={{
+            width: widthPixel(24), height: widthPixel(24),
+            marginTop: widthPixel(-25), marginRight: widthPixel(125), alignSelf: 'flex-end',
+          }}
+          source={require("../../assets/images/frame2.png")}
+        />
+
+        <View style={[styles.cardContainer4,]}>
+          <Text style={styles.cardText4}>$ 1,840.00</Text>
+          <Text style={styles.cardText5}>$ 284.00</Text>
+        </View>
         </View>
 
       </ImageBackground>
@@ -107,12 +110,12 @@ const HomePage = () => {
         />
       </ScrollView>
 
-      <View style={[styles.textContainer, { flex: 0.3, }]}>
+      <View style={[styles.textContainer, ]}>
         <Text style={styles.text3}> Send Again</Text>
         <Text style={styles.text4}>See all </Text>
       </View>
 
-      <View style={[styles.imageContainer, { flex: 0.6,}]}>
+      <View style={[styles.imageContainer, ]}>
         <Image
           style={{ width: widthPixel(62), height: widthPixel(62), }}
           source={require("../../assets/images/image1.png")}
@@ -183,7 +186,7 @@ const styles = StyleSheet.create({
   },
 
   topContainer: {
-    flex: 0.2,
+    flex: 0.5,
     flexDirection: "row",
     justifyContent: 'space-between',
     marginHorizontal: widthPixel(22),
@@ -194,6 +197,7 @@ const styles = StyleSheet.create({
   alarmImageContainer: {
     marginLeft: widthPixel(24),
     flex: 0.4,
+    backgroundColor: "gray",
     marginTop: 8
   },
   alarmImage: {
@@ -226,11 +230,12 @@ const styles = StyleSheet.create({
   },
 
   cardContainer: {
-    marginTop: heightPixel(58),
+    // backgroundColor:"green",
+    // marginTop: heightPixel(58),
     flexDirection: 'row',
     marginHorizontal: widthPixel(40),
     alignItems: "center",
-    flex: 0.3,
+    // flex: 0.3,
     justifyContent: 'space-between'
   },
   cardText1: {
@@ -268,10 +273,10 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     marginHorizontal: widthPixel(40),
-    marginTop: heightPixel(8),
-    paddingBottom: 30,
-    flex: 0.3,
-    // backgroundColor:"pink"
+    // marginTop: heightPixel(8),
+    // paddingBottom: heightPixel(30),
+    // flex: 0.3,
+    // backgroundColor: "pink"
   },
   cardText4: {
     color: "#FFFFFF",
@@ -290,8 +295,9 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: 'space-between',
     marginHorizontal: widthPixel(22),
-    marginTop: 31,
-    flex: 0.3,
+    marginTop: heightPixel(31),
+    // flex: 0.3,
+    // backgroundColor:"red"
   },
   text3: {
     color: "#222222",
@@ -307,7 +313,8 @@ const styles = StyleSheet.create({
   },
 
   imageContainer: {
-    marginTop: widthPixel(15),
+    marginTop: heightPixel(15),
+    // backgroundColor:"red",
     flexDirection: "row",
     justifyContent: 'space-between',
     marginHorizontal: widthPixel(22),

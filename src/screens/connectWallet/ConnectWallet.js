@@ -28,7 +28,7 @@ const ConnectWallet = () => {
       />
 
 
-
+<ScrollView >
       <View style={styles.container2}>
 
 
@@ -139,7 +139,7 @@ const ConnectWallet = () => {
       </View>
 
 
-
+</ScrollView>
 
 
 
@@ -156,6 +156,8 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     // backgroundColor: "red"
+    backgroundColor: "#FFFFFF",
+
   },
 
   container2: {
@@ -170,6 +172,7 @@ const styles = StyleSheet.create({
     // borderRadius: 20,
     borderTopLeftRadius: 20,
     borderTopRightRadius: 20,
+    marginTop:widthPixel(120)
   },
 
 

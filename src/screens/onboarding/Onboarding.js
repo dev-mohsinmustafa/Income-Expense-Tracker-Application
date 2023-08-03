@@ -45,15 +45,15 @@ const Onboarding = ({ navigation }) => {
             <View style={{ flex: 1 }}>
                 <ImageBackground
                     resizeMode='contain'
-                    style={{ width: "100%", height: "100%" }}
-                    source={require("../../assets/images/onboardBg1.png")}
+                    style={{ width: "100%", height: "100%", alignSelf:'flex-start', marginTop:heightPixel(-50) }}
+                    source={require("../../assets/images/ok.png")}
                 >
 
                     <Image
                         source={require("../../assets/images/Group1.png")}
                         resizeMode='contain'
 
-                        style={{ width: "60%", height: "120%", alignSelf: 'center', justifyContent: 'center' }}
+                        style={{ width: "60%", height: "120%", alignSelf: 'center',  }}
                     />
 
                 </ImageBackground>

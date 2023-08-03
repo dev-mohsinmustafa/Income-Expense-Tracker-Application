@@ -68,7 +68,7 @@ const TabNavigator = () => {
             screenOptions={{
                 headerShown: false,
                 tabBarShowLabel: false,
-                tabBarStyle: styles.tabBar
+                tabBarStyle: styles.tabBar,
             }}
 
             initialRouteName='HomePage'>
@@ -82,7 +82,7 @@ const TabNavigator = () => {
                             <Image
                                 style={[styles.tabIcon, getIconColor(focused)]}
                                 resizeMode='contain'
-                                source={require("../assets/images/Vector.png")}
+                                source={require("../assets/images/home-1.png")}
                             />
                         </View>
                     )
@@ -105,7 +105,7 @@ const TabNavigator = () => {
                             <Image
                                 style={[styles.tabIcon, getIconColor(focused)]}
                                 resizeMode='contain'
-                                source={require("../assets/images/bar-chart.png")}
+                                source={require("../assets/images/bar-chart-1.png")}
                             />
                         </View>
                     )
@@ -120,9 +120,11 @@ const TabNavigator = () => {
             />
             {showAddButton && (
                 <Tab.Screen name='AddButton' component={AddExpense}
+                // screenOptions={{ headerShown: false, animation: "slide_from_bottom" }}
+
                     options={{
                         tabBarIconStyle: {
-                            height: 0
+                            height: 0,
                         },
                         tabBarButton: () => (
                             <AddButton />
@@ -151,7 +153,7 @@ const TabNavigator = () => {
                             <Image
                                 style={[styles.tabIcon, getIconColor(focused)]}
                                 resizeMode='contain'
-                                source={require("../assets/images/wallet.png")}
+                                source={require("../assets/images/wallet-1.png")}
                             />
                         </View>
                     )
@@ -174,7 +176,7 @@ const TabNavigator = () => {
                             <Image
                                 style={[styles.tabIcon, getIconColor(focused)]}
                                 resizeMode='contain'
-                                source={require("../assets/images/user.png")}
+                                source={require("../assets/images/user-1.png")}
                             />
                         </View>
                     )
@@ -203,6 +205,8 @@ const TabNavigator = () => {
 
 const styles = StyleSheet.create({
     tabBar: {
+        // flex:0.1,
+        // paddingTop:10,
         // position: 'absolute',
         padding: 0,
         // left: 16,
@@ -210,20 +214,20 @@ const styles = StyleSheet.create({
         // bottom: 22,
         height: 80,
         // borderRadius: 16,
-        backgroundColor: "white",
-        borderTopColor: "transparent",
-        shadowColor: "#69AEA9",
-        shadowOffset: {
-            width: 0,
-            height: 2,
-        },
-        shadowOpacity: 0.25,
-        shadowRadius: 3.84,
+        // backgroundColor: "#FFFFFF",
+        // borderTopColor: "transparent",
+      
 
-        elevation: 5,
-
-        boxShadow: "0px -2px 25px rgba(0, 0, 0, 0.04)",
-        // backgroundColor:"red"
+        // backgroundColor: '#fff', // Set your background color
+        // borderTopWidth: 1,
+        // borderTopColor: '#e0e0e0', // Set the color of the top border (optional)
+        // elevation: 25,
+             elevation: 25, // This adds a top shadow to the bottom bar (Android only)
+        shadowOffset: { width: 0, height: -5 }, // This adds a tp shadow to the bottom bar (iOS only)
+        shadowColor: 'black', // Customize the shadow color if needed
+        shadowOpacity: 0.1, // Customize the shadow opacity if needed
+        shadowRadius: 10, // Customize the shadow radius if needed
+        zIndex: 999, // Set a high z-index to make sure the bottom bar is always on top of other content
     },
     tabIconContainer: {
         position: 'absolute',

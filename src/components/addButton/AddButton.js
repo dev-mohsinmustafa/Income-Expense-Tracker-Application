@@ -85,6 +85,15 @@ const styles = StyleSheet.create({
         width: 60,
         height: 60,
         borderRadius: 30,
+        
+
+        
+        elevation: 25, // This adds a top shadow to the bottom bar (Android only)
+        shadowOffset: { width: 0, height: -5 }, // This adds a tp shadow to the bottom bar (iOS only)
+        shadowColor: 'black', // Customize the shadow color if needed
+        shadowOpacity: 0.1, // Customize the shadow opacity if needed
+        shadowRadius: 10, // Customize the shadow radius if needed
+        zIndex: 999, // Set a high z-index to make sure the bottom bar is always on top of other content
     },
     addButtonIcon: {
         width: 20,

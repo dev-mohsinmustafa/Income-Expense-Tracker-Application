@@ -82,7 +82,7 @@ const styles = StyleSheet.create({
     mainContainer: {
         // backgroundColor: "gray",
         flex: 1,
-        marginHorizontal: 22,
+        marginHorizontal: widthPixel(22),
         height: 80,
         marginTop: 2,
         flexDirection:'row',

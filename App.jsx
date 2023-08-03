@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, ScrollView } from 'react-native'
+import { View, Text, ScrollView, StyleSheet } from 'react-native'
 
 
 // import { NavigationContainer } from '@react-navigation/native';
@@ -21,8 +21,10 @@ import MainNavigator from './src/navigation/MainNavigator';
 const App = () => {
   return (
    
-
-    <MainNavigator />
+<View style={styles.container}>
+  <MainNavigator />
+  
+</View>
     // <View style={{flex:1}}>
     //   {/* <Card /> */}
     //   <HomePage />
@@ -52,4 +54,11 @@ const App = () => {
   )
 }
 
-export default App
+export default App;
+
+
+const styles= StyleSheet.create({
+  container:{
+    flex:1
+  }
+})

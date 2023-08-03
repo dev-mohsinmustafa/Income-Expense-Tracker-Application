@@ -27,7 +27,7 @@ const Statistic = ({ navigation, props }) => {
         </TouchableOpacity>
         <Text style={styles.statistics}>Statistics</Text>
         <TouchableOpacity
-          style={{ width: 30, height: 30, justifyContent: 'center', }}
+          // style={{ width: 30, height: 30, justifyContent: 'center', }}
         >
           <Image
             source={require("../../assets/images/download.png")}
@@ -78,6 +78,7 @@ const Statistic = ({ navigation, props }) => {
         <Text style={styles.months}>Jun</Text>
         <Text style={styles.months}>Jul</Text>
         <Text style={styles.months}>Aug</Text>
+        <Text style={styles.months}>Sep</Text>
       </View>
 
       <View style={styles.container4}>
@@ -126,7 +127,8 @@ const Statistic = ({ navigation, props }) => {
 
           </View>
 
-          <View style={{ backgroundColor: "#FBFBFB", borderRadius: 12, marginHorizontal: widthPixel(20), marginTop: heightPixel(15), }}>
+          <View style={{ backgroundColor: "#FBFBFB", marginBottom:20,
+           borderRadius: 12, marginHorizontal: widthPixel(20), marginTop: heightPixel(15), }}>
             <Card title1="Paypal" title2="Jan 16, 2022" title3="- $ 85.99" color="#F95B51" color1="#000000" color2="#666666" image={require("../../assets/images/paypal.png")}
               width={35} height={35}
             />
@@ -158,7 +160,7 @@ const styles = StyleSheet.create({
     // backgroundColor: "yellow",
     flexDirection: 'row',
     justifyContent: 'space-between',
-    marginHorizontal: widthPixel(30),
+    marginHorizontal: widthPixel(24),
     alignItems: 'center',
   },
   statistics: {
@@ -175,9 +177,11 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    marginHorizontal: widthPixel(32),
-    alignContent: 'center',
-    marginTop: heightPixel(40)
+    // marginHorizontal: widthPixel(32),
+    // alignContent: 'center',
+    marginTop: heightPixel(40),
+    marginRight:widthPixel(42),
+    marginLeft:widthPixel(24)
 
   },
   day: {
@@ -187,7 +191,7 @@ const styles = StyleSheet.create({
     // fontWeight: 400,
     color: "#FFFFFF",
     fontSize: fontPixel(13),
-    lineHeight: 16,
+    // lineHeight: 16,
 
   },
   dayParent: {
@@ -203,7 +207,7 @@ const styles = StyleSheet.create({
     fontFamily: "Inter-Regular",
     // fontWeight: 400,
     fontSize: fontPixel(13),
-    lineHeight: 16,
+    // lineHeight: 16,
   },
   container3: {
     flex: 4,
@@ -238,7 +242,7 @@ const styles = StyleSheet.create({
     // backgroundColor: "yellow",
     flexDirection: 'row',
     justifyContent: 'space-between',
-    marginHorizontal: widthPixel(20),
+    marginLeft: widthPixel(20),
 
   },
   months: {

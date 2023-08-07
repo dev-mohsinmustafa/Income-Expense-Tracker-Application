@@ -23,9 +23,10 @@ const HomePage = () => {
 
       <ImageBackground
         style={{
-          width: widthPixel(414), height: widthPixel(357), resizeMode: 'cover'
+          width: widthPixel(414), height: widthPixel(357), resizeMode: 'cover',
+          
         }}
-        source={require("../../assets/images/home.png")}>
+        source={require("../../assets/images/bgImage.png")}>
         <View style={styles.topContainer}>
           <View style={{ flexDirection: 'column', }}>
             <Text style={styles.text1}>Good afternoon,</Text>
@@ -100,7 +101,7 @@ const HomePage = () => {
             <Text style={styles.balanceText}>Total Balance</Text>
             <View 
             style={{
-              backgroundColor:'red',
+              // backgroundColor:'red',
               width:18, height:18, alignItems:'center', justifyContent:'center'}}
             >
               <Image
@@ -127,9 +128,10 @@ const HomePage = () => {
           flex: 0.3,
           // backgroundColor:"blue",
           marginTop: heightPixel(8),
-          marginBottom: heightPixel(30)
+          marginBottom: heightPixel(30),
+          justifyContent:'center',
         }}>
-          <Text style={styles.cardText1}>$ 2,548.00</Text>
+          <Text style={[styles.cardText1,]}>$ 2,548.00</Text>
 
         </View>
 
@@ -141,18 +143,18 @@ const HomePage = () => {
           justifyContent: 'space-between'
         }}>
           <View
-            style={{ flexDirection: 'row' }}
+            style={{ flexDirection: 'row', justifyContent:'center', alignItems:'center' }}
           >
             <Image
-              style={{ width: 20, height: 20 }}
+              style={{ width: 20, height: 20,  }}
               source={require("../../assets/images/frame1.png")}
             />
-            <Text style={styles.cardText2}>Income</Text>
+            <Text style={[styles.cardText2,]}>Income</Text>
           </View>
-          <View style={{ flexDirection: 'row' }}>
-            <Text style={styles.cardText3}>Expenses</Text>
+          <View style={{ flexDirection: 'row',justifyContent:'center', alignItems:'center' }}>
+            <Text style={[styles.cardText3,]}>Expenses</Text>
             <Image
-              style={{ width: 20, height: 20 }}
+              style={{ width: 20, height: 20,   }}
               source={require("../../assets/images/frame2.png")}
             />
 
@@ -162,6 +164,7 @@ const HomePage = () => {
 
         <View style={{
           flex: 0.2,
+          marginTop:6,
           marginHorizontal: 40,
           justifyContent: 'space-between',
           //  backgroundColor:"blue", 
@@ -275,7 +278,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     marginHorizontal: widthPixel(24),
     marginTop: widthPixel(74),
-    backgroundColor: "red",
+    // backgroundColor: "red",
   },
 
   alarmImageContainer: {
@@ -383,7 +386,7 @@ const styles = StyleSheet.create({
     marginHorizontal: widthPixel(22),
     marginTop: heightPixel(31),
     // flex: 0.3,
-    backgroundColor: "red",
+    // backgroundColor: "red",
     alignItems: 'center'
   },
   text3: {

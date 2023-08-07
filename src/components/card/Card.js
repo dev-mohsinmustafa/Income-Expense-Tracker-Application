@@ -51,7 +51,7 @@ const Card = (props) => {
                     <Image
                         source={props.image}
 
-                        style={[{ marginTop: props.marginTop }, { height: props.height, width: props.width }, { borderRadius: props.borderRadius }]} />
+                        style={[{},{ marginTop: props.marginTop }, { height: props.height, width: props.width }, { borderRadius: props.borderRadius }]} />
                 </View>
 
 

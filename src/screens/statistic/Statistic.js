@@ -98,12 +98,12 @@ const Statistic = ({ navigation, props }) => {
           }}>
 
             <Card title1="Starbucks" title2="Jan 12, 2022" title3="- $ 150.00" color="#F95B51" color1="#000000" color2="#666666" image={require("../../assets/images/starbucks.png")}
-              width={29} height={30}
+              width={29} height={30} borderRadius={40}
             />
           </View>
           <View style={{
             backgroundColor: "#29756F", borderRadius: 12,
-            marginHorizontal: widthPixel(20), marginTop: heightPixel(15), elevation: 5, 
+            marginHorizontal: widthPixel(20), marginTop: heightPixel(15), 
             shadowColor: "#29756F",
             shadowOffset: {
               width: 0,
@@ -116,8 +116,8 @@ const Statistic = ({ navigation, props }) => {
 
           }}>
             <Card title1="Transfer" title2="Yesterday" title3="- $ 85.00" color1="#FFFFFF" color2="#EEEEEE" color="#FBFBFB" image={require("../../assets/images/transfer1.png")}
-              width={44} height={30}
-            />
+              width={44} height={44} borderRadius={40}
+             />
           </View>
           <View style={{ backgroundColor: "#FBFBFB", borderRadius: 12, 
           marginHorizontal: widthPixel(20), marginTop: heightPixel(15), }}>
@@ -238,7 +238,7 @@ const styles = StyleSheet.create({
     lineHeight: 16,
   },
   container35: {
-    flex: 0.3,
+    flex: 0.5,
     // backgroundColor: "yellow",
     flexDirection: 'row',
     justifyContent: 'space-between',
@@ -260,7 +260,7 @@ const styles = StyleSheet.create({
     lineHeight: 17,
   },
   container4: {
-    flex: 0.4,
+    flex: 0.5,
     // backgroundColor: "gray",
     flexDirection: 'row',
     justifyContent: 'space-between',

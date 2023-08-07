@@ -82,7 +82,7 @@ const TabNavigator = () => {
                             <Image
                                 style={[styles.tabIcon, getIconColor(focused)]}
                                 resizeMode='contain'
-                                source={require("../assets/images/home-1.png")}
+                                source={require("../assets/images/home.png")}
                             />
                         </View>
                     )
@@ -105,7 +105,7 @@ const TabNavigator = () => {
                             <Image
                                 style={[styles.tabIcon, getIconColor(focused)]}
                                 resizeMode='contain'
-                                source={require("../assets/images/bar-chart-1.png")}
+                                source={require("../assets/images/bar-chart.png")}
                             />
                         </View>
                     )
@@ -153,7 +153,7 @@ const TabNavigator = () => {
                             <Image
                                 style={[styles.tabIcon, getIconColor(focused)]}
                                 resizeMode='contain'
-                                source={require("../assets/images/wallet-1.png")}
+                                source={require("../assets/images/wallet.png")}
                             />
                         </View>
                     )
@@ -176,7 +176,7 @@ const TabNavigator = () => {
                             <Image
                                 style={[styles.tabIcon, getIconColor(focused)]}
                                 resizeMode='contain'
-                                source={require("../assets/images/user-1.png")}
+                                source={require("../assets/images/user.png")}
                             />
                         </View>
                     )

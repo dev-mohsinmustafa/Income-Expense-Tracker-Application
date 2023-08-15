@@ -16,21 +16,22 @@ const Profile = () => {
     <View style={styles.container}>
       <Header title="Profile" image1={require("../../assets/images/back.png")}
         image2={require("../../assets/images/alarm.png")}
-
       />
 
       <View style={styles.container2}>
 
         <Image
+        style={{width:120, height:120, backgroundColor:'red'}}
           source={require("../../assets/images/profile.png")}
         />
         <Text style={styles.engelin}>Enjelin Morgeana</Text>
-        <Text style={styles.engelin1}>@enjelin_morgeana</Text>
+        <Text style={[styles.engelin1,{paddingBottom:20}]}>@enjelin_morgeana</Text>
 
 
       </View>
 
-      <ScrollView style={styles.container3}>
+      <View style={styles.container3}>
+      <ScrollView style={{flex:1, marginTop:heightPixel(56), marginBottom: heightPixel(20), backgroundColor:"red"}}>
 
         <View style={{ flexDirection: 'row', alignItems: 'center' }}>
           <Image
@@ -38,9 +39,7 @@ const Profile = () => {
           <Text style={styles.invite}>Invite Friends</Text>
         </View>
 
-
         <View style={styles.horizontalLine}>
-
         </View>
 
         <View style={{ flexDirection: 'row' }}>
@@ -87,6 +86,7 @@ const Profile = () => {
 
       </ScrollView>
 
+        </View>
 
 
 
@@ -123,6 +123,7 @@ const styles = StyleSheet.create({
     color: "#222222",
     fontFamily: "Inter-SemiBold",
     fontSize: fontPixel(20),
+    marginTop:20
   },
   engelin1: {
     color: "#438883",
@@ -132,9 +133,9 @@ const styles = StyleSheet.create({
   container3: {
     flex: 1,
     // backgroundColor: "green",
-    position: 'relative',
-    zIndex: -10,
-    marginTop: heightPixel(178),
+    // position: 'relative',
+    // zIndex: -10,
+    marginTop: heightPixel(34),
     flexDirection: 'column',
     marginHorizontal: widthPixel(25)
   },

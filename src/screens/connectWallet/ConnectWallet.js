@@ -22,62 +22,62 @@ const ConnectWallet = () => {
   const navigation = useNavigation()
   return (
     <View style={styles.container}>
+      <View style={{ flex: 0.25 }}>
+        <Header title="Connect Wallet" image1={require("../../assets/images/back.png")}
+          image2={require("../../assets/images/alarm.png")}
+        />
+      </View>
 
-      <Header title="Connect Wallet" image1={require("../../assets/images/back.png")}
-        image2={require("../../assets/images/alarm.png")}
-      />
-
-
-<ScrollView >
-      <View style={styles.container2}>
+      <ScrollView style={{ flex: 1,     marginBottom: heightPixel(22) }} >
+        <View style={styles.container2}>
 
 
 
-        <View style={styles.container3}>
-          <View style={styles.transactionContainer}>
-            <TouchableOpacity
-            >
-              <Text style={styles.transaction}>Cards</Text>
-            </TouchableOpacity>
+          <View style={styles.container3}>
+            <View style={styles.transactionContainer}>
+              <TouchableOpacity
+              >
+                <Text style={styles.transaction}>Cards</Text>
+              </TouchableOpacity>
+            </View>
+
+            <View style={styles.upcomingContainer}>
+              <TouchableOpacity
+                onPress={() => navigation.navigate("Accounts")}
+
+              >
+                <Text style={styles.transaction}> Accounts</Text>
+              </TouchableOpacity>
+            </View>
           </View>
 
-          <View style={styles.upcomingContainer}>
-            <TouchableOpacity
-              onPress={() => navigation.navigate("Accounts")}
+          <View style={styles.container4}>
 
-            >
-              <Text style={styles.transaction}> Accounts</Text>
-            </TouchableOpacity>
+            <Image
+              resizeMode='contain'
+              style={{ width: widthPixel(324), height: heightPixel(211) }}
+              source={require("../../assets/images/card.png")}
+            />
           </View>
-        </View>
-
-        <View style={styles.container4}>
-
-          <Image
-            resizeMode='contain'
-            style={{ width: widthPixel(324), height: heightPixel(211) }}
-            source={require("../../assets/images/card.png")}
-          />
-        </View>
 
 
 
-        <View style={styles.container5}>
+          <View style={styles.container5}>
 
-          <Text style={styles.debitText}>Add your debit Card</Text>
-          <Text style={styles.para}>This card must be connected to a bank account under your name</Text>
-        </View>
+            <Text style={styles.debitText}>Add your debit Card</Text>
+            <Text style={styles.para}>This card must be connected to a bank account under your name</Text>
+          </View>
 
-        <View style={styles.fieldSet}>
-          <Text style={styles.legend}>NAME ON CARD</Text>
-          <TextInput
-            style={styles.inputField}
-            placeholder="IRVAN MOSES"
-            placeholderTextColor="#438883"
-            keyboardType="numeric"
-          />
-        </View>
-        {/* <View style={styles.container6}>
+          <View style={styles.fieldSet}>
+            <Text style={styles.legend}>NAME ON CARD</Text>
+            <TextInput
+              style={styles.inputField}
+              placeholder="IRVAN MOSES"
+              placeholderTextColor="#438883"
+              keyboardType="numeric"
+            />
+          </View>
+          {/* <View style={styles.container6}>
           <TextInput
             style={styles.inputField}
             placeholder="IRVAN MOSES"
@@ -86,60 +86,60 @@ const ConnectWallet = () => {
           />
         </View> */}
 
-        <View style={styles.container7}>
-          <View style={{ width: widthPixel(220) }}>
-            <TextInput
-              style={styles.inputField2}
-              placeholder="DEBIT CARD NUMBER"
-              placeholderTextColor="#888888"
-              keyboardType="numeric"
-            />
+          <View style={styles.container7}>
+            <View style={{ width: widthPixel(220) }}>
+              <TextInput
+                style={styles.inputField2}
+                placeholder="DEBIT CARD NUMBER"
+                placeholderTextColor="#888888"
+                keyboardType="numeric"
+              />
+            </View>
+
+            <View style={{ width: widthPixel(133), paddingLeft: 11 }}>
+
+              <TextInput
+                style={styles.inputField2}
+                placeholder="CVC"
+                placeholderTextColor="#888888"
+                keyboardType="numeric"
+              />
+            </View>
+
+
           </View>
 
-          <View style={{ width: widthPixel(133), paddingLeft: 11 }}>
 
-            <TextInput
-              style={styles.inputField2}
-              placeholder="CVC"
-              placeholderTextColor="#888888"
-              keyboardType="numeric"
-            />
+          <View style={[styles.container7,]}>
+            <View style={{ width: widthPixel(220) }}>
+              <TextInput
+                style={styles.inputField2}
+                placeholder="EXPIRATION MM/YY"
+                placeholderTextColor="#888888"
+                keyboardType="numeric"
+              />
+            </View>
+
+            <View style={{ width: widthPixel(133), paddingLeft: 11 }}>
+
+              <TextInput
+                style={styles.inputField2}
+                placeholder="ZIP"
+                placeholderTextColor="#888888"
+                keyboardType="numeric"
+              />
+            </View>
+
+
           </View>
+
+
 
 
         </View>
 
 
-        <View style={[styles.container7,]}>
-          <View style={{ width: widthPixel(220) }}>
-            <TextInput
-              style={styles.inputField2}
-              placeholder="EXPIRATION MM/YY"
-              placeholderTextColor="#888888"
-              keyboardType="numeric"
-            />
-          </View>
-
-          <View style={{ width: widthPixel(133), paddingLeft: 11 }}>
-
-            <TextInput
-              style={styles.inputField2}
-              placeholder="ZIP"
-              placeholderTextColor="#888888"
-              keyboardType="numeric"
-            />
-          </View>
-
-
-        </View>
-
-
-
-
-      </View>
-
-
-</ScrollView>
+      </ScrollView>
 
 
 
@@ -172,7 +172,7 @@ const styles = StyleSheet.create({
     // borderRadius: 20,
     borderTopLeftRadius: 20,
     borderTopRightRadius: 20,
-    marginTop:widthPixel(120)
+    // marginTop:widthPixel(165)
   },
 
 
@@ -218,7 +218,8 @@ const styles = StyleSheet.create({
   container5: {
     // backgroundColor: "yellow",
     paddingLeft: widthPixel(25),
-    marginTop: heightPixel(30)
+    marginTop: heightPixel(30),
+    marginBottom: heightPixel(22)
 
   },
   debitText: {
@@ -252,7 +253,7 @@ const styles = StyleSheet.create({
     top: -8,
     left: 10,
     backgroundColor: '#FFFFFF',
-    color:"#666666",
+    color: "#666666",
     fontFamily: "Inter-Regular",
     fontSize: fontPixel(12),
   },
@@ -267,13 +268,14 @@ const styles = StyleSheet.create({
     // borderWidth: 1,
     // borderColor: "#438883",
     // paddingLeft: widthPixel(20),
-    width:"100%"
+    width: "100%"
   },
   container7: {
     flexDirection: 'row',
     marginHorizontal: widthPixel(25),
     justifyContent: 'space-between',
     marginTop: heightPixel(12),
+    // backgroundColor:"red"
 
   },
   inputField2: {

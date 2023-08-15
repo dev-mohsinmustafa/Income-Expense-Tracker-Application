@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { View, Text, ScrollView, StyleSheet } from 'react-native'
 
 
@@ -13,52 +13,61 @@ import { View, Text, ScrollView, StyleSheet } from 'react-native'
 // import Profile from './src/screens/profile/Profile';
 // import TabNavigator from './src/navigation/TabNavigator';
 import MainNavigator from './src/navigation/MainNavigator';
+import SplashScreen from 'react-native-splash-screen';
 
 
 // const Stack = createNativeStackNavigator();
 
 
-const App = () => {
-  return (
-   
-<View style={styles.container}>
-  <MainNavigator />
-  
-</View>
-    // <View style={{flex:1}}>
-    //   {/* <Card /> */}
-    //   <HomePage />
-    // </View>
-    // <NavigationContainer>
-    //   <Stack.Navigator
+class App extends Component {
 
-    //   screenOptions={{headerShown: false}}
-    //       initialRouteName="Splash">
+componentDidMount(){
+  SplashScreen.hide();
+}
 
-    //      <Stack.Screen
-    //        name="Splash"
-    //        component={Splash}
-    //     // options={{title: 'Welcome to Splash Screen'}}
-    //     />
-    //      <Stack.Screen name="Onboarding"
-    //       component={Onboarding} />
-    //       <Stack.Screen name="HomePage"
-    //       component={HomePage} />
-    //       <Stack.Screen name="Statistic"
-    //       component={TabNavigator} />
 
-        
-    //   </Stack.Navigator>
+  render() {
+    return (
 
-    //  </NavigationContainer>
-  )
+      <View style={styles.container}>
+        <MainNavigator />
+
+      </View>
+      // <View style={{flex:1}}>
+      //   {/* <Card /> */}
+      //   <HomePage />
+      // </View>
+      // <NavigationContainer>
+      //   <Stack.Navigator
+
+      //   screenOptions={{headerShown: false}}
+      //       initialRouteName="Splash">
+
+      //      <Stack.Screen
+      //        name="Splash"
+      //        component={Splash}
+      //     // options={{title: 'Welcome to Splash Screen'}}
+      //     />
+      //      <Stack.Screen name="Onboarding"
+      //       component={Onboarding} />
+      //       <Stack.Screen name="HomePage"
+      //       component={HomePage} />
+      //       <Stack.Screen name="Statistic"
+      //       component={TabNavigator} />
+
+
+      //   </Stack.Navigator>
+
+      //  </NavigationContainer>
+    )
+  }
 }
 
 export default App;
 
 
-const styles= StyleSheet.create({
-  container:{
-    flex:1
+const styles = StyleSheet.create({
+  container: {
+    flex: 1
   }
 })

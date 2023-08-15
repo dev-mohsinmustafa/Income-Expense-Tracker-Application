@@ -51,19 +51,19 @@ const Card = (props) => {
                     <Image
                         source={props.image}
 
-                        style={[{},{ marginTop: props.marginTop }, { height: props.height, width: props.width }, { borderRadius: props.borderRadius }]} />
+                        style={[{ marginTop: props.marginTop }, { height: props.height, width: props.width }, { borderRadius: props.borderRadius }]} />
                 </View>
 
 
                 <View style={{ marginLeft: 20 }}>
                     <Text style={[styles.upwork, { color: props.color1 }]}  >{props.title1}</Text>
-                    <Text style={[styles.today, { color: props.color2 }]} >{props.title2}</Text>
+                    <Text style={[styles.today, { color: props.color2 } ]} >{props.title2}</Text>
                 </View>
             </View>
 
-            <View style={{}} >
+            <View >
             <Text style={[styles.dollar, { color: props.color }, 
-                        {borderRadius: props.borderRadius},
+                        {borderRadius: props.borderRadius1},
                         {backgroundColor: props.backgroundColor},
                         { height: props.height1, width: props.width1 }
                         ]} >
@@ -83,7 +83,7 @@ const styles = StyleSheet.create({
         // backgroundColor: "gray",
         flex: 1,
         marginHorizontal: widthPixel(22),
-        height: 80,
+        height: heightPixel(80),
         marginTop: 2,
         flexDirection:'row',
         alignItems: 'center',
@@ -99,7 +99,7 @@ const styles = StyleSheet.create({
         color: "#000000",
         // fontWeight: 500,
         fontSize: fontPixel(16),
-        lineHeight: 20,
+        // lineHeight: 20,
 
 
     },
@@ -108,7 +108,7 @@ const styles = StyleSheet.create({
         // fontWeight: 400,
         // color: "#666666",
         fontSize: fontPixel(13),
-        lineHeight: 16,
+        // lineHeight: 16,
         paddingTop:6,
         // alignItems: "flex-end"
     },

@@ -67,7 +67,8 @@ const styles = StyleSheet.create({
         fontFamily: "Inter-SemiBold",
         // fontWeight: 600,
         fontSize: fontPixel(18),
-        lineHeight: 21,
+        // lineHeight: 21,
+        // backgroundColor:"red"
     },
 
 })

@@ -31,16 +31,17 @@ const Wallet = () => {
 
       <View style={styles.container2}>
 
-        <View style={styles.container3}>
+        <View style={[styles.container3, ]}>
           <Text style={styles.total}>Total Balance</Text>
           <Text style={styles.dollar}>$ 2,548.00</Text>
         </View>
 
 
-        <View style={styles.container4}>
+        <View style={[styles.container4,]}>
           <TouchableOpacity style={{}}>
             <View>
               <Image
+              style={{height:60, width:60}}
                 source={require("../../assets/images/Add2.png")}
               />
             </View>
@@ -92,7 +93,7 @@ const Wallet = () => {
         </View>
 
 
-        <ScrollView>
+        <ScrollView style={{marginVertical:heightPixel(25)}}>
           <Card title1="Upwork" title2="Today" title3="+ $ 850.00" color="#25A969" color1="#000000" color2="#666666" image={require("../../assets/images/upwork.png")}
             width={50} height={50}
           />
@@ -169,6 +170,7 @@ const styles = StyleSheet.create({
     color: "#222222",
     fontFamily: "Inter-Bold",
     fontSize: fontPixel(30),
+    // backgroundColor:"pink"
   },
   container4: {
     flexDirection: 'row',
@@ -193,7 +195,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     // justifyContent:'space-between',
     alignItems: 'center',
-    marginTop: 60
+    marginTop: heightPixel(60)
   },
   transactionContainer: {
     backgroundColor: "#FFFFFF",

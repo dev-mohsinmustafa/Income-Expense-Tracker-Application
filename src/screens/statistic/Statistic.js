@@ -1,7 +1,9 @@
-import React from 'react'
-import { View, Text, StyleSheet, TouchableOpacity, Image, Pressable, ScrollView } from 'react-native'
+import React, { useState } from 'react'
+import { View, Text, StyleSheet, TouchableOpacity, Image, Pressable, ScrollView, FlatList, TouchableWithoutFeedback } from 'react-native'
 import ratios from '../../styles/ratios'
 import Card from '../../components/card/Card';
+
+import { months } from '../../constants/Constants';
 
 let {
   widthPixel,
@@ -11,7 +13,16 @@ let {
   pixelSizeHorizontal,
 } = ratios;
 
+
+
 const Statistic = ({ navigation, props }) => {
+
+  const [isClicked, setIsClicked] = useState(false);
+
+  const handlePress = () => {
+    setIsClicked(!isClicked);
+  };
+  
   return (
     <View style={styles.container}>
 
@@ -27,7 +38,7 @@ const Statistic = ({ navigation, props }) => {
         </TouchableOpacity>
         <Text style={styles.statistics}>Statistics</Text>
         <TouchableOpacity
-          // style={{ width: 30, height: 30, justifyContent: 'center', }}
+        // style={{ width: 30, height: 30, justifyContent: 'center', }}
         >
           <Image
             source={require("../../assets/images/download.png")}
@@ -67,11 +78,9 @@ const Statistic = ({ navigation, props }) => {
           }}
           source={require("../../assets/images/grapp.png")}
         />
-
-
-
       </View>
-      <View style={styles.container35}>
+
+      {/* <View style={styles.container35}>
         <Text style={styles.months}>Mar</Text>
         <Text style={styles.months}>Apr</Text>
         <Text style={styles.may}>May</Text>
@@ -79,8 +88,47 @@ const Statistic = ({ navigation, props }) => {
         <Text style={styles.months}>Jul</Text>
         <Text style={styles.months}>Aug</Text>
         <Text style={styles.months}>Sep</Text>
-      </View>
+      </View> */}
 
+
+
+      {/* <View style={styles.container35}> */}
+
+      <FlatList style={[styles.flatlist,{marginTop: heightPixel(15),flex:1,}]}
+      horizontal
+      showsHorizontalScrollIndicator={false}
+      // ese be likh skty hai 
+      keyExtractor={(key)=>{
+        return key.index
+      }}
+      // keyExtractor={(index)=>{
+      //   return index.index
+      // }}
+        data={months}
+        renderItem={({item}) => {
+          // jab ham argument element pass krenge to
+          // in react native 1 by 1 data to mile ga he or sath hamy index be milta hai sath 
+          // or be chezen mile ge
+          // log me ham pele index mil raha phr item or item ke andr name 
+          // to  us ke leye hame element.item.name ke ander jana prega to data milega
+          // console.log(element.item.name);
+          // ecma script me agr ap direct ke den ke mujhe item se name chahye is ko
+          //  destructioning kehty hai phr ap uper element ne pass kren ge 
+          // {item} pass krenge bs
+
+          console.log(item.name);
+          return (
+            <View style={styles.container35}>
+              {/* <Text style={styles.months}>{element.item.name}</Text> */}
+              <Text style={styles.months}>{item.nameMar}</Text>
+              <Text style={styles.monthsNameExceptMarch}>{item.name}</Text>
+              <Text style={styles.may}>{item.nameMay}</Text>
+            </View>
+          )
+        }}
+      />
+ {/* </View> */}
+ 
       <View style={styles.container4}>
 
         <Text style={styles.text}>Top Spending</Text>
@@ -101,34 +149,57 @@ const Statistic = ({ navigation, props }) => {
               width={29} height={30} borderRadius={40}
             />
           </View>
-          <View style={{
-            backgroundColor: "#29756F", borderRadius: 12,
-            marginHorizontal: widthPixel(20), marginTop: heightPixel(15), 
-            shadowColor: "#29756F",
-            shadowOffset: {
-              width: 0,
-              height: 12,
-            },
-            shadowOpacity: 0.58,
-            shadowRadius: 16.00,
-            
-            elevation: 24,
 
-          }}>
+<TouchableWithoutFeedback onPress={handlePress}>
+
+          <View style={[styles.box, isClicked && styles.clickedBox,{
+            backgroundColor: "#29756F", borderRadius: 12,
+            marginHorizontal: widthPixel(20), marginTop: heightPixel(15),
+            // shadowColor: "#29756F",
+            // shadowOffset: {
+            //   width: 0,
+            //   height: 12,
+            // },
+            // shadowOpacity: 0.58,
+            // x: 0,
+            // y: 3,
+            // shadowRadius: 16.00,
+            // elevation: 24,
+
+            // flex: 1,
+            // borderRadius: 10,
+            // // To round image corners
+            // overflow: 'hidden',
+            // borderColor: '#999',
+            // borderWidth: 0.5,
+            // // https://github.com/facebook/react-native/issues/10049#issuecomment-366426897
+            // // backgroundColor: '#FFF',
+            // // Android shadow
+            // elevation: 4
+
+          }]}>
             <Card title1="Transfer" title2="Yesterday" title3="- $ 85.00" color1="#FFFFFF" color2="#EEEEEE" color="#FBFBFB" image={require("../../assets/images/transfer1.png")}
               width={44} height={44} borderRadius={40}
-             />
+            />
           </View>
-          <View style={{ backgroundColor: "#FBFBFB", borderRadius: 12, 
-          marginHorizontal: widthPixel(20), marginTop: heightPixel(15), }}>
+
+          </TouchableWithoutFeedback>
+
+
+          <View style={{
+            backgroundColor: "#FBFBFB", borderRadius: 12,
+            marginHorizontal: widthPixel(20), marginTop: heightPixel(15),
+          }}>
             <Card title1="Youtube" title2="Jan 16, 2022" title3="- $ 11.99" color="#F95B51" color1="#000000" color2="#666666" image={require("../../assets/images/youtube1.png")}
               width={35} height={35}
             />
 
           </View>
 
-          <View style={{ backgroundColor: "#FBFBFB", marginBottom:20,
-           borderRadius: 12, marginHorizontal: widthPixel(20), marginTop: heightPixel(15), }}>
+          <View style={{
+            backgroundColor: "#FBFBFB", marginBottom: 20,
+            borderRadius: 12, marginHorizontal: widthPixel(20), marginTop: heightPixel(15),
+          }}>
             <Card title1="Paypal" title2="Jan 16, 2022" title3="- $ 85.99" color="#F95B51" color1="#000000" color2="#666666" image={require("../../assets/images/paypal.png")}
               width={35} height={35}
             />
@@ -156,7 +227,8 @@ const styles = StyleSheet.create({
 
   },
   container1: {
-    flex: 1.5,
+    flex: 1,
+    marginTop: heightPixel(47),
     // backgroundColor: "yellow",
     flexDirection: 'row',
     justifyContent: 'space-between',
@@ -180,8 +252,8 @@ const styles = StyleSheet.create({
     // marginHorizontal: widthPixel(32),
     // alignContent: 'center',
     marginTop: heightPixel(40),
-    marginRight:widthPixel(42),
-    marginLeft:widthPixel(24)
+    marginRight: widthPixel(42),
+    marginLeft: widthPixel(24)
 
   },
   day: {
@@ -219,8 +291,8 @@ const styles = StyleSheet.create({
     marginTop: heightPixel(30)
 
   },
-  container3Child:
-  {
+  container3Child: {
+    // backgroundColor:"red",
     borderRadius: 10,
     borderWidth: 1,
     borderColor: "#666666",
@@ -231,14 +303,17 @@ const styles = StyleSheet.create({
     height: heightPixel(40),
   },
   expense: {
+    // backgroundColor:"gray",
     color: "#666666",
     fontFamily: "Inter-Medium",
     // fontWeight: 500,
     fontSize: fontPixel(14),
-    lineHeight: 16,
   },
   container35: {
-    flex: 0.5,
+    // marginTop: heightPixel(15),
+    justifyContent: 'center',
+    alignItems: 'center',
+    flex: 0.7,
     // backgroundColor: "yellow",
     flexDirection: 'row',
     justifyContent: 'space-between',
@@ -250,8 +325,16 @@ const styles = StyleSheet.create({
     fontFamily: "Inter-Regular",
     // fontWeight: 400,
     fontSize: fontPixel(14),
-    lineHeight: 17,
+    // paddingLeft: 17,
   },
+  monthsNameExceptMarch: {
+    color: "#666666",
+    fontFamily: "Inter-Regular",
+    // fontWeight: 400,
+    fontSize: fontPixel(14),
+    paddingLeft: 17,
+  },
+ 
   may: {
     color: "#438883",
     fontFamily: "Inter-Regular",
@@ -260,7 +343,7 @@ const styles = StyleSheet.create({
     lineHeight: 17,
   },
   container4: {
-    flex: 0.5,
+    flex: 0.8,
     // backgroundColor: "gray",
     flexDirection: 'row',
     justifyContent: 'space-between',
@@ -284,12 +367,49 @@ const styles = StyleSheet.create({
 
   },
 
-  navContainer: {
-    // flex: 1.5,
-    // backgroundColor: "red",
+  
 
 
-  }
+
+
+
+
+
+
+
+  box: {
+    // width: 100,
+    // height: 100,
+    backgroundColor: 'lightblue',
+    borderRadius: 10,
+    // Add default box shadow here
+    shadowColor: '#2F7E79',
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
+    elevation: 25,
+  },
+  clickedBox: {
+    // Add clicked box shadow here
+    shadowColor: 'green', // Change the shadow color to indicate the click
+    // You can modify other shadow properties as needed
+    shadowOffset: {
+      width: 0,
+      height: 14, // Increase the height to increase the vertical shadow
+    },
+    shadowRadius: 20,
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
+    elevation: 25,
+  },
+
+ 
+
+
+
 
 })
 

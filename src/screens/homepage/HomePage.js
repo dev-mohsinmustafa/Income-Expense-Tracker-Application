@@ -1,6 +1,7 @@
-import React from 'react'
-import { View, Text, ImageBackground, Image, StyleSheet, ScrollView, TouchableOpacity, Pressable } from 'react-native'
+import React, { useState } from 'react'
+import { TouchableWithoutFeedback, View, Text, ImageBackground, Image, StyleSheet, ScrollView, TouchableOpacity, Pressable } from 'react-native'
 import Card from '../../components/card/Card'
+import { Shadow } from 'react-native-shadow-2';
 
 
 import ratios from '../../styles/ratios';
@@ -15,33 +16,44 @@ import { useIsFocused } from '@react-navigation/native';
 
 
 const HomePage = () => {
+
   const isFocused = useIsFocused()
   console.log(isFocused, 'focused')
+
+  const [isClicked, setIsClicked] = useState(false);
+
+  const handlePress = () => {
+    setIsClicked(!isClicked);
+  };
 
   return (
     <View style={styles.homeContainer}>
 
-      <ImageBackground
-        style={{
-          width: widthPixel(414), height: widthPixel(357), resizeMode: 'cover',
-          
-        }}
-        source={require("../../assets/images/bgImage.png")}>
-        <View style={styles.topContainer}>
-          <View style={{ flexDirection: 'column', }}>
-            <Text style={styles.text1}>Good afternoon,</Text>
-            <Text style={styles.text2}>Enjelin Morgeana</Text>
+      {/* <Shadow distance={15} startColor={'#2F7E79'} endColor={'#ff00ff10'} offset={[3, 4]}> */}
+      <TouchableWithoutFeedback onPress={handlePress}>
+        <View style={styles.box}>
 
-          </View>
-          <Image
-            style={styles.alarmImage}
-            source={require("../../assets/images/alarm.png")}
-          />
-        </View>
+          <ImageBackground
+            style={[isClicked && styles.clickedBox, {
+              width: widthPixel(414), height: widthPixel(357), resizeMode: 'cover',
 
-        {/* <View style={styles.alarmImageContainer}> */}
-        {/* </View> */}
-        {/* <View style={{ marginTop: 58 }}>
+            }]}
+            source={require("../../assets/images/bgImage.png")}>
+            <View style={styles.topContainer}>
+              <View style={{ flexDirection: 'column', }}>
+                <Text style={styles.text1}>Good afternoon,</Text>
+                <Text style={styles.text2}>Enjelin Morgeana</Text>
+
+              </View>
+              <Image
+                style={styles.alarmImage}
+                source={require("../../assets/images/alarm.png")}
+              />
+            </View>
+
+            {/* <View style={styles.alarmImageContainer}> */}
+            {/* </View> */}
+            {/* <View style={{ marginTop: 58 }}>
 
           <View style={[styles.cardContainer,]}>
             <View style={{ flexDirection: "row" }}>
@@ -87,96 +99,102 @@ const HomePage = () => {
           </View>
         </View> */}
 
-        <View style={{
-          flex: 0.2,
-          // backgroundColor:"red",
-          justifyContent: 'center',
-          marginTop: heightPixel(58),
-          justifyContent: 'space-between',
-          flexDirection: 'row',
-          alignItems: 'center',
-          marginHorizontal: 40
-        }}>
-          <View style={{ flexDirection: 'row', alignItems: 'center', }}>
-            <Text style={styles.balanceText}>Total Balance</Text>
-            <View 
-            style={{
-              // backgroundColor:'red',
-              width:18, height:18, alignItems:'center', justifyContent:'center'}}
-            >
-              <Image
-              // style={{alignSelf: 'center', }}
-                source={require("../../assets/images/total.png")} />
+            <View style={{
+              flex: 0.2,
+              // backgroundColor:"red",
+              justifyContent: 'center',
+              marginTop: heightPixel(58),
+              justifyContent: 'space-between',
+              flexDirection: 'row',
+              alignItems: 'center',
+              marginHorizontal: 40
+            }}>
+              <View style={{ flexDirection: 'row', alignItems: 'center', }}>
+                <Text style={styles.balanceText}>Total Balance</Text>
+                <View
+                  style={{
+                    // backgroundColor:'red',
+                    width: 18, height: 18, alignItems: 'center', justifyContent: 'center'
+                  }}
+                >
+                  <Image
+                    // style={{alignSelf: 'center', }}
+                    source={require("../../assets/images/total.png")} />
+                </View>
+              </View>
+
+              <View
+              >
+
+                <Image
+                  source={require("../../assets/images/dot.png")}
+
+                />
+              </View>
+
+
             </View>
-          </View>
 
-          <View
-          >
 
-            <Image
-              source={require("../../assets/images/dot.png")}
 
-            />
-          </View>
+            <View style={{
+              flex: 0.3,
+              // backgroundColor:"blue",
+              marginTop: heightPixel(8),
+              marginBottom: heightPixel(30),
+              justifyContent: 'center',
+            }}>
+              <Text style={[styles.cardText1,]}>$ 2,548.00</Text>
+
+            </View>
+
+            <View style={{
+              marginHorizontal: 38,
+              flex: 0.2,
+              backgroundColor: "gray",
+              flexDirection: 'row',
+              justifyContent: 'space-between'
+            }}>
+              <View
+                style={{ flexDirection: 'row', justifyContent: 'center', alignItems: 'center' }}
+              >
+                <Image
+                  style={{ width: 20, height: 20, }}
+                  source={require("../../assets/images/frame1.png")}
+                />
+                <Text style={[styles.cardText2,]}>Income</Text>
+              </View>
+              <View style={{ flexDirection: 'row', justifyContent: 'center', alignItems: 'center' }}>
+                <Image
+                  style={{ width: 20, height: 20, }}
+                  source={require("../../assets/images/frame2.png")}
+                />
+                <Text style={[styles.cardText3,]}>Expenses</Text>
+
+              </View>
+            </View>
+
+
+            <View style={{
+              flex: 0.2,
+              marginTop: 6,
+              marginHorizontal: 40,
+              justifyContent: 'space-between',
+              //  backgroundColor:"blue", 
+              flexDirection: 'row', marginBottom: heightPixel(29)
+            }}>
+              <Text style={styles.cardText4}>$ 1,840.00</Text>
+              <Text style={styles.cardText5}>$ 284.00</Text>
+            </View>
+
+
+          </ImageBackground>
+          {/* </Shadow> */}
 
 
         </View>
 
-
-
-        <View style={{
-          flex: 0.3,
-          // backgroundColor:"blue",
-          marginTop: heightPixel(8),
-          marginBottom: heightPixel(30),
-          justifyContent:'center',
-        }}>
-          <Text style={[styles.cardText1,]}>$ 2,548.00</Text>
-
-        </View>
-
-        <View style={{
-          marginHorizontal: 38,
-          flex: 0.2,
-          // backgroundColor:"red",
-          flexDirection: 'row',
-          justifyContent: 'space-between'
-        }}>
-          <View
-            style={{ flexDirection: 'row', justifyContent:'center', alignItems:'center' }}
-          >
-            <Image
-              style={{ width: 20, height: 20,  }}
-              source={require("../../assets/images/frame1.png")}
-            />
-            <Text style={[styles.cardText2,]}>Income</Text>
-          </View>
-          <View style={{ flexDirection: 'row',justifyContent:'center', alignItems:'center' }}>
-            <Text style={[styles.cardText3,]}>Expenses</Text>
-            <Image
-              style={{ width: 20, height: 20,   }}
-              source={require("../../assets/images/frame2.png")}
-            />
-
-          </View>
-        </View>
-
-
-        <View style={{
-          flex: 0.2,
-          marginTop:6,
-          marginHorizontal: 40,
-          justifyContent: 'space-between',
-          //  backgroundColor:"blue", 
-          flexDirection: 'row', marginBottom: heightPixel(29)
-        }}>
-          <Text style={styles.cardText4}>$ 1,840.00</Text>
-          <Text style={styles.cardText5}>$ 284.00</Text>
-        </View>
-
-
-      </ImageBackground>
-
+      </TouchableWithoutFeedback>
       <View style={[styles.textContainer,]}>
         <Text style={styles.text3}> Transactions History</Text>
         <Text style={styles.text4}>See all </Text>
@@ -272,6 +290,39 @@ const styles = StyleSheet.create({
     backgroundColor: "#FFFFFF",
   },
 
+
+  box: {
+    // width: 100,
+    // height: 100,
+    // backgroundColor: 'lightblue',
+    // borderRadius: 10,
+    // Add default box shadow here
+    shadowColor: 'green',
+    shadowOffset: {
+      width: 0,
+      height: 14,
+    },
+    shadowRadius: 20,
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
+    elevation: 25,
+  },
+  clickedBox: {
+    // Add clicked box shadow here
+    shadowColor: '#2F7E79', // Change the shadow color to indicate the click
+    // You can modify other shadow properties as needed
+    shadowOffset: {
+      width: 0,
+      height: 14, // Increase the height to increase the vertical shadow
+    },
+    shadowRadius: 20,
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
+    elevation: 25,
+  },
+
+
+
   topContainer: {
     flex: 0.3,
     flexDirection: "row",
@@ -354,7 +405,7 @@ const styles = StyleSheet.create({
     fontFamily: "Inter-Medium",
     // fontWeight: 500,
     fontSize: fontPixel(18),
-    marginRight: 6
+    marginLeft: 6
     // marginRight: widthPixel(20),
   },
 
@@ -410,7 +461,7 @@ const styles = StyleSheet.create({
     marginHorizontal: widthPixel(22),
     // marginBottom: heightPixel(9),
     // position: 'relative'
-    marginBottom:9
+    marginBottom: 9
   },
 
 })

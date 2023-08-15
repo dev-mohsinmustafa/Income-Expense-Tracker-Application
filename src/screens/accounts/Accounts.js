@@ -25,10 +25,13 @@ const Accounts = () => {
     return (
         <View style={styles.container}>
 
+<View style={{flex:1.2}}>
+
             <Header title="Connect Wallet" image1={require("../../assets/images/back.png")}
                 image2={require("../../assets/images/alarm.png")}
-
-            />
+                
+                />
+                </View>
 
 
 
@@ -45,8 +48,8 @@ const Accounts = () => {
 
                     <View style={styles.upcomingContainer}>
                         <TouchableOpacity
-                            onPress={() => console.log("Accounts Pressed")}
-
+                            // onPress={() => console.log("Accounts Pressed")}
+                            onPress={() => navigation.navigate("TransactionDetailsIncome")}
                         >
                             <Text style={styles.transaction}> Accounts</Text>
                         </TouchableOpacity>

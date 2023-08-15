@@ -95,18 +95,18 @@ const UpcomingBills = () => {
 
         <View style={{ flex: 1,  }}>
 
-          <ScrollView>
+        <ScrollView style={{marginVertical:heightPixel(25)}}>
             <Card title1="Youtube" title2="Feb 28, 2022" title3="Pay" color="#438883" color1="#000000" color2="#666666" image={require("../../assets/images/youtube.png")}
-              width={50} height={51} backgroundColor="#ECF9F8" height1={36} width1={100} 
+              width={50} height={51} backgroundColor="#ECF9F8" height1={36} width1={100} borderRadius1={40}
             />
             <Card title1="Electricity" title2="Mar 28, 2022" title3="Pay" color="#438883" color1="#000000" color2="#666666" image={require("../../assets/images/electricity.png")}
-              width={50} height={50} backgroundColor="#ECF9F8" height1={36} width1={100} 
+              width={50} height={50} backgroundColor="#ECF9F8" height1={36} width1={100}  borderRadius1={40}
             />
             <Card title1="House Rent" title2="Mar 31, 2022" title3="Pay" color="#438883" color1="#000000" color2="#666666" image={require("../../assets/images/houseRent.png")}
-              width={50} height={50} backgroundColor="#ECF9F8" height1={36} width1={100} 
+              width={50} height={50} backgroundColor="#ECF9F8" height1={36} width1={100} borderRadius1={40}
             />
             <Card title1="Spotify" title2="Feb 28, 2022" title3="Pay" color="#438883" color1="#000000" color2="#666666" image={require("../../assets/images/spotify.png")}
-              width={50} height={51} backgroundColor="#ECF9F8" height1={36} width1={100} 
+              width={50} height={51} backgroundColor="#ECF9F8" height1={36} width1={100} borderRadius1={40}
             />
 
           </ScrollView>

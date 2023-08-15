@@ -35,7 +35,7 @@ const MainNavigator = () => {
       <Stack.Navigator
 
         screenOptions={{ headerShown: false }}
-        initialRouteName="Splash">
+        initialRouteName="Onboarding">
 
         <Stack.Screen
           name="Splash"

@@ -21,7 +21,7 @@ const Profile = () => {
       <View style={styles.container2}>
 
         <Image
-        style={{width:120, height:120, backgroundColor:'red'}}
+        style={{width:120, height:120, }}
           source={require("../../assets/images/profile.png")}
         />
         <Text style={styles.engelin}>Enjelin Morgeana</Text>
@@ -31,7 +31,7 @@ const Profile = () => {
       </View>
 
       <View style={styles.container3}>
-      <ScrollView style={{flex:1, marginTop:heightPixel(56), marginBottom: heightPixel(20), backgroundColor:"red"}}>
+      <ScrollView style={{flex:1, marginTop:heightPixel(56), marginBottom: heightPixel(20), }}>
 
         <View style={{ flexDirection: 'row', alignItems: 'center' }}>
           <Image

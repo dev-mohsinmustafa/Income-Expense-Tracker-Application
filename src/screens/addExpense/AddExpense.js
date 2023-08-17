@@ -32,7 +32,7 @@ const AddExpense = ({ navigation, props }) => {
               source={require("../../assets/images/back.png")}
             />
           </TouchableOpacity>
-          <Text style={styles.expense}>AddExpense</Text>
+          <Text style={styles.expense}>Add Expense</Text>
           <TouchableOpacity style={{ width: 30, height: 30, justifyContent: 'center', }}>
             <Image
               source={require("../../assets/images/dot.png")}

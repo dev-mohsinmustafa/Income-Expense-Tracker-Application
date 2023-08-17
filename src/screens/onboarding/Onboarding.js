@@ -42,22 +42,41 @@ const Onboarding = ({ navigation }) => {
                 source={onboardingImage}
                 style={{ width: 414, height: 600 }}
             /> */}
-            <View style={{ flex: 1 }}>
+            {/* <View style={{ flex: 1 }}> */}
                 <ImageBackground
                     resizeMode='contain'
-                    style={{ width: "100%", height: "100%", alignSelf:'flex-start', marginTop:heightPixel(-50) }}
-                    source={require("../../assets/images/ok.png")}
+                    style={{ flex:1, width: "100%", height: "100%", alignSelf:'flex-start', marginTop:widthPixel(-50) }}
+                    source={require("../../assets/images/han.png")}
                 >
 
-                    <Image
+                    {/* <Image
                         source={require("../../assets/images/Group1.png")}
                         resizeMode='contain'
 
-                        style={{ width: "60%", height: "120%", alignSelf: 'center',  }}
-                    />
+                        style={{ width: "60%", height: "130%", alignSelf: 'center',  }}
+                    /> */}
 
                 </ImageBackground>
-            </View>
+
+
+                {/* <View style={{alignSelf:'flex-end',marginRight:70,
+                backgroundColor:"red",
+               shadowColor: 'green', // Change the shadow color to indicate the click
+               // You can modify other shadow properties as needed
+               shadowOffset: {
+                 width: 0,
+                 height: 14, // Increase the height to increase the vertical shadow
+               },
+               shadowRadius: 20,
+               shadowOpacity: 0.25,
+               shadowRadius: 3.84,
+               elevation: 5,
+            }}>
+                    <Image source={require("../../assets/images/shadow.png")}
+                    style={{width:100, height:0.5, }}
+                    />
+                </View> */}
+            {/* </View> */}
 
 
             <View style={styles.textContainer}>
@@ -119,10 +138,12 @@ const styles = StyleSheet.create({
 
     },
     textContainer: {
-        // flex: 0.3,
+        flex: 0.1,
         // backgroundColor: "pink",
         justifyContent: 'center',
         alignItems: 'center',
+        marginTop:heightPixel(30)
+        
 
     },
     text: {
@@ -147,8 +168,8 @@ const styles = StyleSheet.create({
     },
 
     loginText: {
-        marginTop: 17,
-        marginBottom: 50
+        marginTop: heightPixel(17),
+        marginBottom: heightPixel(50)
 
 
     },
@@ -157,7 +178,7 @@ const styles = StyleSheet.create({
         fontFamily: "Inter-Medium",
         // fontWeight: 500,
         fontSize: fontPixel(14),
-        lineHeight: 17,
+        // lineHeight: 17,
 
     },
     text3: {
@@ -181,7 +202,7 @@ const styles = StyleSheet.create({
         // flex: 1,
         marginHorizontal: widthPixel(28),
         borderRadius: 40,
-        marginTop: 25,
+        marginTop: heightPixel(25),
         shadowColor: "#69AEA9",
         shadowOffset: {
             width: 0,

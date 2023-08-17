@@ -29,12 +29,13 @@ const HomePage = () => {
   return (
     <View style={styles.homeContainer}>
 
-      {/* <Shadow distance={15} startColor={'#2F7E79'} endColor={'#ff00ff10'} offset={[3, 4]}> */}
+      {/* <Shadow style={{elevation:205,}} distance={15} startColor={'#2F7E79'}> */}
       <TouchableWithoutFeedback onPress={handlePress}>
-        <View style={styles.box}>
 
           <ImageBackground
-            style={[isClicked && styles.clickedBox, {
+            style={[
+              styles.box,isClicked && styles.clickedBox,
+               {
               width: widthPixel(414), height: widthPixel(357), resizeMode: 'cover',
 
             }]}
@@ -151,7 +152,7 @@ const HomePage = () => {
             <View style={{
               marginHorizontal: 38,
               flex: 0.2,
-              backgroundColor: "gray",
+              // backgroundColor: "gray",
               flexDirection: 'row',
               justifyContent: 'space-between'
             }}>
@@ -189,12 +190,11 @@ const HomePage = () => {
 
 
           </ImageBackground>
-          {/* </Shadow> */}
 
 
-        </View>
 
       </TouchableWithoutFeedback>
+          {/* </Shadow> */}
       <View style={[styles.textContainer,]}>
         <Text style={styles.text3}> Transactions History</Text>
         <Text style={styles.text4}>See all </Text>
@@ -294,8 +294,8 @@ const styles = StyleSheet.create({
   box: {
     // width: 100,
     // height: 100,
-    // backgroundColor: 'lightblue',
-    // borderRadius: 10,
+    backgroundColor: '	#00FF00',
+    borderRadius: 10,
     // Add default box shadow here
     shadowColor: 'green',
     shadowOffset: {

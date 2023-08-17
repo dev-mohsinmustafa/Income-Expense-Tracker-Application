@@ -34,6 +34,7 @@ const Accounts = () => {
                 </View>
 
 
+<ScrollView style={{flex:1, marginTop:-heightPixel(620)}}>
 
             <View style={styles.container2}>
 
@@ -136,6 +137,7 @@ const Accounts = () => {
 
 
 
+            </ScrollView>
 
 
 
@@ -150,6 +152,8 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         // backgroundColor: "red"
+        backgroundColor: "#FFFFFF",
+
     },
 
     container2: {
@@ -241,7 +245,9 @@ const styles = StyleSheet.create({
     },
     button: {
         marginTop: heightPixel(103),
-        marginHorizontal:widthPixel(32)
+        marginHorizontal:widthPixel(32),
+        marginBottom:20
+        
 
     },
     buttonShadow: {
